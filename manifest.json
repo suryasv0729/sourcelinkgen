@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Copy Domain for manual cleaning",
+  "version": "1.0",
+  "description": "Copies a predefined text like facebook , linkedin and current domain to the clipboard.",
+  "permissions": ["activeTab", "clipboardWrite"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "./icon16.png.png"
+    }
+  }
+}
