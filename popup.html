@@ -4,9 +4,10 @@
     <title>Copy Domain</title>
     <style>
       body {
-        width: 200px;
+        width: 210px;
         padding: 10px;
         font-family: Arial, sans-serif;
+      
       }
       button {
         width: 100%;
@@ -18,7 +19,7 @@
       img{
         height: 40px;
         width: 40px;
-        cursor: pointer;
+        cursor: url('./icons8-fork-24\ \(1\).png'), auto;
         padding: 0px 10px 0px 10px;
       }
 
@@ -26,14 +27,22 @@
        font-size: 14px;
        font-weight: 500;
         text-align: center;
+
+      }
+
+      div{
+        margin-left: 10px;
       }
     </style>
   </head>
   <body>
-    <img class="linkedin" src="./linkedin.png" ></img>
-    <img class="fb" src="./facebook.png" ></img>
-    <img class="currentSite" src="./internet.png" ></img>
-    <p class="txt">click icon to copy source link</p>
+    <div>
+      <img class="linkedin" src="./linkedin.png" ></img>
+      <img class="fb" src="./facebook.png" ></img>
+      <img class="currentSite" src="./internet.png" ></img>
+    </div>
+  
+    <p class="txt">fork icon to copy source link</p>
     <script src="popup.js"></script>
   </body>
 </html>
