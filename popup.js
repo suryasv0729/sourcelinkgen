@@ -52,9 +52,34 @@ document.querySelector(".currentSite").addEventListener("click", async () => {
       txt.innerHTML = "Error!..while copying link";
     });
 });
+
+function launchMultiUrl() {
+  const Tablerows = document.querySelectorAll(".main-tables-tr");
+  console.log(Tablerows);
+  const allLinks = [];
+
+  Tablerows.forEach((row) => {
+    const firstFourTDs = Array.from(row.querySelectorAll("td")).slice(0, 4);
+    const values = firstFourTDs.map((td) => td.textContent.trim());
+    const urlRegex = /https?:.+/g;
+    console.log(values);
+    values.forEach((value) => {
+      const matches = value.match(urlRegex);
+      if (matches) {
+        allLinks.push(...matches);
+        txt.innerHTML = `\u{1F389}Multiple Url opened successfully`;
+      }
+    });
+  });
+  allLinks.forEach((url) => {
+    chrome.tabs.create({ url });
+  });
+}
+
 document
   .querySelector(".fb")
   .addEventListener("click", () => copyToClipboard("facebook"));
 document
   .querySelector(".linkedin")
   .addEventListener("click", () => copyToClipboard("linkedin"));
+document.querySelector(".MultiUrl").addEventListener("click", launchMultiUrl);

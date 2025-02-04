@@ -3,7 +3,10 @@
   "name": "links for manual cleaning",
   "version": "1.0",
   "description": "Copies a predefined text like facebook , linkedin and current domain to the clipboard.",
-  "permissions": ["activeTab", "storage", "clipboardWrite"],
+  "permissions": ["activeTab", "storage", "clipboardWrite", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
